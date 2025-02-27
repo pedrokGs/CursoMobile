@@ -39,6 +39,7 @@ public class Curso {
                 System.out.println(i + ". " + aluno.getNome() + "| Aprovado");
             else 
                 System.out.println(i + ". " + aluno.getNome() + "| Reprovado");
+            i++;
         }
     }
 
