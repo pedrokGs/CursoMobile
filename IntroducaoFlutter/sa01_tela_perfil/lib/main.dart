@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
                     color: Colors.grey,
                     border: Border.all(color: Colors.black, width: 2),
                   ),
-                  child: Icon(Icons.person, size: 100),
+                  child: Image.asset("assets/img/image.png", width: 200, height: 200, fit: BoxFit.cover),
                 ),
                 Container(
                   padding: EdgeInsets.all(20),
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
                           Icon(Icons.star, color: Colors.yellow),
                           Icon(Icons.star, color: Colors.yellow),
                           Icon(Icons.star, color: Colors.yellow),
-                          Icon(Icons.star, color: Colors.yellow),
+                          Icon(Icons.star, color: const Color.fromARGB(255, 196, 196, 196)),
                         ],
                       ),
                       Text("Johan Smith", style: TextStyle(fontSize: 50)),
