@@ -17,38 +17,53 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blue,
         ),
         // Corpo do aplicativo
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Icon(Icons.person),
-                Icon(Icons.zoom_out),
-                Icon(Icons.add),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Icon(Icons.book),
-                Icon(Icons.person),
-                Icon(Icons.apple),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Icon(Icons.money),
-                Icon(Icons.terrain),
-                Icon(Icons.person),
-              ],
-            ),
-          ],
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Container(
+                        width: 200,
+                        height: 200,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.blue,
+                        ),
+                      ),
+                      Icon(Icons.person),
+                    ],
+                  ),
+                  Icon(Icons.zoom_out),
+                  Icon(Icons.add),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Icon(Icons.book),
+                  Icon(Icons.person),
+                  Icon(Icons.apple),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Icon(Icons.money),
+                  Icon(Icons.terrain),
+                  Icon(Icons.person),
+                ],
+              ),
+            ],
+          ),
         ),
         // Barra lateral (Menu hamburguer)
         drawer: Drawer(
