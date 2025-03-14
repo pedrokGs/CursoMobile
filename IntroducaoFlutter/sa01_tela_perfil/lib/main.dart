@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
                           Icon(Icons.star, color: Colors.yellow),
                           Icon(Icons.star, color: Colors.yellow),
                           Icon(Icons.star, color: Colors.yellow),
-                          Icon(Icons.star, color: const Color.fromARGB(255, 196, 196, 196)),
+                          Icon(Icons.star, color: Colors.grey),
                         ],
                       ),
                       Text("Johan Smith", style: TextStyle(fontSize: 50)),
