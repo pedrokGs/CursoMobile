@@ -77,7 +77,7 @@ class _PerfilPageState extends State<PerfilPage> {
                 style: TextStyle(color: Colors.black87, fontSize: 48),
               ),
             ),
-                        SizedBox(height: 24),
+            SizedBox(height: 24),
             Container(
               alignment: Alignment.center,
               width: MediaQuery.of(context).size.width * 0.8,
@@ -96,12 +96,12 @@ class _PerfilPageState extends State<PerfilPage> {
               child: Column(
                 children: [
                   Text("Cor Preferida:"),
-                  SizedBox(height: 24,),
-                  ElevatedButton(onPressed: () {
-                    
-                  }, child: Text("Escolher uma cor"))
+                  SizedBox(height: 24),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text("Escolher uma cor"),
+                  ),
                 ],
-              )
               ),
             ),
           ],
