@@ -37,14 +37,15 @@ class PetShopDBHelper{
             raca TEXT NOT NULL,
             nome_dono TEXT NOT NULL,
             telefone_dono TEXT NOT NULL);
+
+            CREATE TABLE IF NOT EXISTS consultas(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            pet_id INTEGER NOT NULL,
+            data_hora TEXT NOT NULL,
+            tipo_servico TEXT NOT NULL,
+            observacao TEXT NOT NULL,
+            FOREIGN KEY (pet_id) REFERENCES pets(id) ON DELETE CASCAD);
           """
-            // CREATE TABLE IF NOT EXISTS consultas(
-            // id INTEGER PRIMARY KEY AUTOINCREMENT,
-            // pet_id INTEGER NOT NULL,
-            // data_hora TEXT NOT NULL,
-            // tipo_servico TEXT NOT NULL,
-            // observacao TEXT NOT NULL,
-            // FOREIGN KEY (pet_id) REFERENCES pets(id) ON DELETE CASCAD);
 
         )
       },
