@@ -31,8 +31,17 @@ class _AddPetScreenState extends State<AddPetScreen> {
       );
 
       //mando para o banco
-      await _petsController.addPet(newPet);
+      try{
+          await _petsController.addPet(newPet);
       Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen())); //Retorna para a Tela Anterior
+      } catch(e){
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Erro ao salvar Pet: $e"))
+        );
+      } finally {
+        _formKey.currentState!.reset();
+      }
+    
     }
   }
 

@@ -13,7 +13,7 @@ class _HomeScreenState extends State<HomeScreen>{
   final PetsController _petsController = PetsController();
 
   List<Pet> _pets = [];
-  bool _isLoanding = true; // enquanto carrega o banco
+  bool _isLoading = true; // enquanto carrega o banco
 
   @override
   void initState() {
@@ -24,7 +24,8 @@ class _HomeScreenState extends State<HomeScreen>{
 
   Future<void> _loadPets() async{
     setState(() {
-      _isLoanding = true;
+      _isLoading = true;
+      _pets = [];
     });
     try {
         _pets = await _petsController.fetchPets();
@@ -33,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen>{
         SnackBar(content: Text("Exception: $erro")));
     } finally{ //execução obrigatória
       setState(() {
-        _isLoanding = false;
+        _isLoading = false;
       });
     }
   }
@@ -43,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen>{
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(title: Text("Meus Pets")),
-      body: _isLoanding ? Center(child: CircularProgressIndicator()) : ListView.builder(
+      body: _isLoading ? Center(child: CircularProgressIndicator()) : ListView.builder(
         itemCount: _pets.length,
         itemBuilder: (context,index) {
           final pet = _pets[index];
