@@ -1,0 +1,35 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "João Silva",
+            "email": "joao@email.com"
+        },
+        {
+            "id": 2,
+            "name": "Maria Souza",
+            "email": "maria@email.com"
+        }
+    ],
+    "books": [
+        {
+            "id": 1,
+            "title": "O Guia do Mochileiro das Galáxias",
+            "author": "Douglas Adams",
+            "avaliable": false,
+            "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.WiAGl_ddfMY5XAPITsxYjwHaKu?rs=1&pid=ImgDetMain&o=7&rm=3",
+            "summary": "Guia dos mochileiros das Galáxias"
+        },
+        {
+            "id": 2,
+            "title": "Memórias Póstumas de Brás Cubas",
+            "author": "Machado de Assis",
+            "avaliable": true,
+            "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81c5DFJ5iVL.jpg",
+            "summary": "Memórias Póstumas de Brás Cubas"
+        }
+    ],
+    "loans": [
+        {"id":1, "userId":1, "bookId":1, "startDate":"2025-08-20", "dueDate":"2025-08-30", "returned": false}
+    ]
+}
