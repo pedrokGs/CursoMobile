@@ -1,6 +1,7 @@
 import 'package:biblioteca_app/providers/book_provider.dart';
 import 'package:biblioteca_app/providers/theme_provider.dart';
 import 'package:biblioteca_app/screens/home_screen.dart';
+import 'package:biblioteca_app/screens/main_screen.dart';
 import 'package:biblioteca_app/themes/app_colors.dart';
 import 'package:biblioteca_app/themes/app_text_themes.dart';
 import 'package:flutter/material.dart';
@@ -28,8 +29,9 @@ class BibliotecaApp extends StatelessWidget {
       darkTheme: ThemeData(colorScheme: AppColors.getColorScheme(isDark), textTheme: AppTextThemes.getTextTheme()),
       themeMode: _themeProvider.themeMode,
       initialRoute: "/",
+      debugShowCheckedModeBanner: false,
       routes: {
-        "/": (context) => HomeScreen(),
+        "/": (context) => MainScreen(),
       },
     );
   }

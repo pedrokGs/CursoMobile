@@ -20,7 +20,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
     return AppBar(
       elevation: 5,
       centerTitle: true,
-      title: Text(widget.title ?? ""),
+      title: Text(widget.title ?? "Library"),
       backgroundColor: Theme.of(context).colorScheme.primary,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusGeometry.only(
@@ -31,11 +31,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
       actions: [
         IconButton(
           onPressed: () {
-            if (_themeProvider.themeMode == ThemeMode.dark) {
-              _themeProvider.toggleTheme(false);
-            } else {
-              _themeProvider.toggleTheme(true);
-            }
+            _themeProvider.themeMode == ThemeMode.dark ? _themeProvider.toggleTheme(false) : _themeProvider.toggleTheme(true);
           },
           icon: Icon(
             _themeProvider.themeMode == ThemeMode.dark

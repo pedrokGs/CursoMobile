@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 class ApiService {
   // base URL para Conexão com API
-  static const String _baseURL = "http://10.109.197.8:3003";
+  static const String _baseURL = "http://10.109.197.9:3003";
 
   static Future<List<dynamic>> fetchList(String path) async{
     final res = await http.get(Uri.parse("$_baseURL/$path"));
@@ -27,7 +27,7 @@ class ApiService {
 static Future<Map<String,dynamic>> post(String path, Map<String,dynamic> body) async{
     final res = await http.post(
       Uri.parse("$_baseURL/$path"),
-      headers: {"Content-Type": "applciation/json"},
+      headers: {"Content-Type": "application/json"},
       body: json.encode(body)
     );
     if (res.statusCode == 201) return json.decode(res.body);
@@ -35,14 +35,31 @@ static Future<Map<String,dynamic>> post(String path, Map<String,dynamic> body) a
   }
 
   //PUT (Atualizar Recurso)
-  static Future<Map<String,dynamic>> put(String path, Map<String,dynamic> body, String id) async{
+  static Future<Map<String,dynamic>> patch(String path, Map<String,dynamic> body, String id) async{
+    final res = await http.patch(
+      Uri.parse("$_baseURL/$path/$id"),
+      headers: {"Content-Type": "application/json"},
+      body: json.encode(body)
+    );
+    if (res.statusCode == 200) {
+      return json.decode(res.body);
+    } else{
+      throw Exception("Falha ao Atualizar em $path");
+    }
+  }
+  
+    static Future<Map<String,dynamic>> put(String path, Map<String,dynamic> body, String id) async{
     final res = await http.put(
       Uri.parse("$_baseURL/$path/$id"),
       headers: {"Content-Type": "applciation/json"},
       body: json.encode(body)
     );
-    if (res.statusCode == 201) return json.decode(res.body);
+    if (res.statusCode == 200) {
+      return json.decode(res.body);
+    
+    } else{
     throw Exception("Falha ao Atualizar em $path");
+    }
   }
 
   //DELETE (Apagar Recurso)

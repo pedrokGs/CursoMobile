@@ -1,35 +1,75 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "name": "João Silva",
-            "email": "joao@email.com"
-        },
-        {
-            "id": 2,
-            "name": "Maria Souza",
-            "email": "maria@email.com"
-        }
-    ],
-    "books": [
-        {
-            "id": 1,
-            "title": "O Guia do Mochileiro das Galáxias",
-            "author": "Douglas Adams",
-            "avaliable": false,
-            "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.WiAGl_ddfMY5XAPITsxYjwHaKu?rs=1&pid=ImgDetMain&o=7&rm=3",
-            "summary": "Guia dos mochileiros das Galáxias"
-        },
-        {
-            "id": 2,
-            "title": "Memórias Póstumas de Brás Cubas",
-            "author": "Machado de Assis",
-            "avaliable": true,
-            "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81c5DFJ5iVL.jpg",
-            "summary": "Memórias Póstumas de Brás Cubas"
-        }
-    ],
-    "loans": [
-        {"id":1, "userId":1, "bookId":1, "startDate":"2025-08-20", "dueDate":"2025-08-30", "returned": false}
-    ]
+  "users": [
+    {
+      "id": "1",
+      "name": "João Silvau",
+      "email": "joao@email.com"
+    },
+    {
+      "id": "2",
+      "name": "Mariah Souzavf",
+      "email": "maria@email.com"
+    },
+    {
+      "id": null,
+      "name": "pedro",
+      "email": "pedro@example"
+    },
+    {
+      "id": null,
+      "name": "teste",
+      "email": "teste@gmail"
+    },
+    {
+      "id": "6766",
+      "name": "gvh",
+      "email": "trdfg"
+    }
+  ],
+  "books": [
+    {
+      "id": "1",
+      "title": "O Guia do Mochileiro das Galáxias",
+      "author": "Douglas Adams",
+      "avaliable": false,
+      "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.WiAGl_ddfMY5XAPITsxYjwHaKu?rs=1&pid=ImgDetMain&o=7&rm=3",
+      "summary": "Guia dos mochileiros das Galáxias",
+      "isFavorite": true
+    },
+    {
+      "id": "2",
+      "title": "Memórias Póstumas de Brás Cubas",
+      "author": "Machado de Assis",
+      "avaliable": false,
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81c5DFJ5iVL.jpg",
+      "summary": "Memórias Póstumas de Brás Cubas",
+      "isFavorite": true
+    }
+  ],
+  "loans": [
+    {
+      "id": "1",
+      "userId": "1",
+      "bookId": "1",
+      "startDate": "2025-08-20",
+      "dueDate": "2025-08-30",
+      "returned": false
+    },
+    {
+      "id": null,
+      "userId": "2",
+      "bookId": "1",
+      "startDate": "2025-08-28 14:01:20.257236",
+      "dueDate": "2025-09-27T14:01:20.260494",
+      "returned": false
+    },
+    {
+      "userId": "opa chat",
+      "bookId": "rh",
+      "startDate": "2025-08-28 14:22:14.390270",
+      "dueDate": "2025-09-27T14:22:14.393535",
+      "returned": false,
+      "id": "e408"
+    }
+  ]
 }

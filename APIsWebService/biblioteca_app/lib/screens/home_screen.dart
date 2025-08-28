@@ -13,7 +13,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  
   @override
   void initState() {
     super.initState();
@@ -27,7 +26,6 @@ class _HomeScreenState extends State<HomeScreen> {
     final _bookProvider = Provider.of<BookProvider>(context);
 
     return Scaffold(
-      appBar: CustomAppBar(title: "Library"),
       body: RefreshIndicator(
         onRefresh: () async {
           _bookProvider.fetchBooks();
@@ -36,39 +34,65 @@ class _HomeScreenState extends State<HomeScreen> {
             ? const Center(child: CircularProgressIndicator())
             : Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const SizedBox(height: 24),
 
                   Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: Text(
-                    "Minha Estante",
-                    style: Theme.of(context).textTheme.headlineSmall,
-                  ),
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: Text(
+                      "Minha Estante",
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
                   ),
                   const SizedBox(height: 12),
                   Consumer<BookProvider>(
-                  builder: (context, bookProvider, child) {
-                    return SizedBox(
-                    height: 325,
-                    child: CarouselSlider.builder(
-                      itemCount: bookProvider.books.length,
-                      itemBuilder: (context, index, realIndex) {
-                      final book = bookProvider.books[index];
-                      return BookContainer(book: book);
-                      },
-                      options: CarouselOptions(
-                      height: 300,
-                      autoPlay: true,
-                      enlargeCenterPage: true,
-                      viewportFraction: 0.7,
-                      aspectRatio: 16 / 9,
-                      initialPage: 0,
-                      enableInfiniteScroll: false,
-                      ),
-                    ),
-                    );
-                  },
+                    builder: (context, bookProvider, child) {
+                      return SizedBox(
+                        height: 325,
+                        child: CarouselSlider.builder(
+                          itemCount: bookProvider.books.length,
+                          itemBuilder: (context, index, realIndex) {
+                            final book = bookProvider.books[index];
+                            return BookContainer(book: book);
+                          },
+                          options: CarouselOptions(
+                            height: 300,
+                            autoPlay: true,
+                            enlargeCenterPage: true,
+                            viewportFraction: 0.7,
+                            aspectRatio: 16 / 9,
+                            initialPage: 0,
+                            enableInfiniteScroll: false,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                  SizedBox(height: 24),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: Text("Lista geral: ", style: Theme.of(context).textTheme.titleMedium,),
+                  ),
+                  Consumer<BookProvider>(
+                    builder: (context, provider, child) {
+                      return Expanded(
+                        child: ListView.builder(
+                          itemCount: provider.books.length,
+                          shrinkWrap: false,
+                          itemBuilder: (context, index) {
+                            final book = provider.books[index];
+                            return Card(
+                              child: ListTile(
+                                leading: ClipRRect(borderRadius: BorderRadiusGeometry.circular(16), child: Image.network(book.imageUrl)),
+                                title: Text(book.title),
+                                subtitle: Text(book.author),
+                              ),
+                            );
+                          },
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),

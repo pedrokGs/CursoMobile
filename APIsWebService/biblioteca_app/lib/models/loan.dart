@@ -19,4 +19,20 @@ class Loan {
     );       
   }
 
+  Map<String, dynamic> toJson() {
+    final data = {
+      "userId": userId,
+      "bookId": bookId,
+      "startDate": startDate,
+      "dueDate": dueDate,
+      "returned": returned,
+    };
+
+    if (id != null) {
+      data["id"] = id!;
+    }
+
+    return data;
+  }
+
 }
