@@ -14,10 +14,10 @@ class Book {
       id: json["id"] ?? "0",
       title: json["title"] ?? "",
       author: json["author"] ?? "",
-      available: json["available"] == true ? true : false,
+      available: json["available"] ?? false,
       imageUrl: json["imageUrl"] ?? "",
       summary: json["summary"] ?? "",
-      isFavorite: json["isFavorite"]  == true ? true : false,
+      isFavorite: json["isFavorite"] ?? false,
     );       
   }
 

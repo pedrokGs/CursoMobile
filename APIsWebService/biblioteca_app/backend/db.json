@@ -4,26 +4,6 @@
       "id": "1",
       "name": "João Silvau",
       "email": "joao@email.com"
-    },
-    {
-      "id": "2",
-      "name": "Mariah Souzavf",
-      "email": "maria@email.com"
-    },
-    {
-      "id": null,
-      "name": "pedro",
-      "email": "pedro@example"
-    },
-    {
-      "id": null,
-      "name": "teste",
-      "email": "teste@gmail"
-    },
-    {
-      "id": "6766",
-      "name": "gvh",
-      "email": "trdfg"
     }
   ],
   "books": [
@@ -31,7 +11,7 @@
       "id": "1",
       "title": "O Guia do Mochileiro das Galáxias",
       "author": "Douglas Adams",
-      "avaliable": false,
+      "available": true,
       "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.WiAGl_ddfMY5XAPITsxYjwHaKu?rs=1&pid=ImgDetMain&o=7&rm=3",
       "summary": "Guia dos mochileiros das Galáxias",
       "isFavorite": true
@@ -40,10 +20,19 @@
       "id": "2",
       "title": "Memórias Póstumas de Brás Cubas",
       "author": "Machado de Assis",
-      "avaliable": false,
+      "available": true,
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81c5DFJ5iVL.jpg",
       "summary": "Memórias Póstumas de Brás Cubas",
       "isFavorite": true
+    },
+    {
+      "id": "1756986636115",
+      "title": "1984",
+      "author": "George Orwell",
+      "available": true,
+      "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.8bTpGDLEYVpDlV8tD10XlQAAAA?cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "summary": "Livro",
+      "isFavorite": false
     }
   ],
   "loans": [
@@ -57,7 +46,7 @@
     },
     {
       "id": null,
-      "userId": "2",
+      "userId": null,
       "bookId": "1",
       "startDate": "2025-08-28 14:01:20.257236",
       "dueDate": "2025-09-27T14:01:20.260494",

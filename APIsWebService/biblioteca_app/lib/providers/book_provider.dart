@@ -6,9 +6,12 @@ import 'package:flutter/material.dart';
 
 class BookProvider extends ChangeNotifier {
   List<Book> _books = [];
+  List<Book> _availableBooks = [];
   bool _isLoading = false;
 
   List<Book> get books => _books;
+
+  List<Book> get availableBooks => _availableBooks;
 
   bool get isLoading => _isLoading;
 
@@ -18,8 +21,14 @@ class BookProvider extends ChangeNotifier {
     try {
       final data = await ApiService.fetchList("books");
       _books = [];
+      _availableBooks = [];
       for (var book in data) {
-        _books.add(Book.fromJson(book));
+        Book newBook = Book.fromJson(book);
+        print(newBook.available);
+        _books.add(newBook);
+        if(newBook.available){
+          _availableBooks.add(newBook);
+        }
       }
       _isLoading = false;
     } catch (e) {
@@ -49,6 +58,24 @@ class BookProvider extends ChangeNotifier {
       notifyListeners();
     } catch(e){
       log("Erro $e");
+      throw Exception("Erro $e");
+    }
+  }
+
+  Future<void> addBook(Book book) async{
+    try{
+     await ApiService.post('books', book.toJson());
+     notifyListeners(); 
+    } catch(e){
+      throw Exception("Erro $e");
+    }
+  }
+
+  Future<void> deleteBook(String id) async{
+    try{
+      await ApiService.delete("books", id);
+      notifyListeners();
+    } catch(e){
       throw Exception("Erro $e");
     }
   }

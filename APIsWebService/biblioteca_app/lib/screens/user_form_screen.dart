@@ -33,6 +33,7 @@ class _UserFormScreenState extends State<UserFormScreen> {
   void _save() async {
     if (_formKey.currentState!.validate()) {
       final user = User(
+        id: DateTime.now().millisecondsSinceEpoch.toString(),
         name: _nameController.text,
         email: _emailController.text,
       );

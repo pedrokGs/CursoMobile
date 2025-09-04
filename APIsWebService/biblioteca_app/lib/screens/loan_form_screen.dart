@@ -33,6 +33,7 @@ class _LoanFormScreenState extends State<LoanFormScreen> {
   void _save() async {
     if (_formKey.currentState!.validate()) {
       final loan = Loan(
+        id: DateTime.now().millisecondsSinceEpoch.toString(),
         bookId: _bookIdController.text,
         userId: _userIdController.text,
         startDate: DateTime.now().toString(),

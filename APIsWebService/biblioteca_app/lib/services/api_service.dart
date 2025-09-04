@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 class ApiService {
   // base URL para Conexão com API
-  static const String _baseURL = "http://10.109.197.9:3003";
+  static const String _baseURL = "http://10.109.197.4:3003";
 
   static Future<List<dynamic>> fetchList(String path) async{
     final res = await http.get(Uri.parse("$_baseURL/$path"));
