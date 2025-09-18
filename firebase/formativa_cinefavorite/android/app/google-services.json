@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1098289848182",
+    "project_id": "cinefavorite-app",
+    "storage_bucket": "cinefavorite-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1098289848182:android:c90a1141bba3a7bb53a457",
+        "android_client_info": {
+          "package_name": "com.example.formativa_cinefavorite"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxEt_DNdMHWLoWtS4hxZ_cbT9A2jtWoJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
