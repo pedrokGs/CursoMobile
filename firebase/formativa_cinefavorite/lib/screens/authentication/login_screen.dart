@@ -57,12 +57,16 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 24),
               ElevatedButton(
-                onPressed: () {
+                onPressed: ()async {
                   try {
-                    _authService.login(
+                    final credentials = await _authService.login(
                       emailController.text.trim(),
                       passwordController.text,
                     );
+
+                    if(credentials != null){
+                      Navigator.pushNamed(context, '/home');
+                    }
                   } catch (e) {
                     ScaffoldMessenger.of(
                       context,
